@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker tag my-web-app:latest <your-docker-hub-username>/my-web-app:latest'
-                sh 'docker push <your-docker-hub-username>/my-web-app:latest'
+                sh 'docker tag my-web-app:latest techysurinder/my-web-app:latest'
+                sh 'docker push techysurinder/my-web-app:latest'
             }
         }
     }
