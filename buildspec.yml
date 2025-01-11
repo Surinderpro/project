@@ -13,8 +13,8 @@ phases:
   post_build:
     commands:
       - echo "Pushing Docker image to Docker Hub..."
-      - docker tag my-web-app:latest <your-docker-hub-username>/my-web-app:latest
-      - docker push <your-docker-hub-username>/my-web-app:latest
+      - docker tag my-web-app:latest techysurinder/my-web-app:latest
+      - docker push techysurinder/my-web-app:latest
 
 artifacts:
   files:
