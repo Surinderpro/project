@@ -1,0 +1,21 @@
+version: 0.2.0
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - apt-get update
+      - apt-get install -y docker.io
+  build:
+    commands:
+      - echo "Building Docker image..."
+      - docker build -t my-web-app .
+  post_build:
+    commands:
+      - echo "Pushing Docker image to Docker Hub..."
+      - docker tag my-web-app:latest <your-docker-hub-username>/my-web-app:latest
+      - docker push <your-docker-hub-username>/my-web-app:latest
+
+artifacts:
+  files:
+    - '**/*'
